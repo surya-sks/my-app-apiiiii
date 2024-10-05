@@ -24,7 +24,7 @@ import com.example.demo.service.EmployeeService;
 import com.example.demo.service.ItemService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "https://surya-sks.github.io/"})
 @RequestMapping("/api/items")
 public class ItemController {
    private ItemService itemService;

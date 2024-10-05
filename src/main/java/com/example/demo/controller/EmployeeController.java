@@ -22,7 +22,7 @@ import com.example.demo.model.EmployeeAbsenceHistory;
 import com.example.demo.service.EmployeeService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "https://surya-sks.github.io/"})
 @RequestMapping("/api/employees")
 public class EmployeeController {
    private EmployeeService employeeService;
