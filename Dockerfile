@@ -1,8 +1,11 @@
-FROM maven:3.9.2-openjdk-22-slim AS builder
+FROM openjdk:22-jdk-slim AS builder
+
+# Install Maven
+RUN apt-get update && apt-get install -y maven
 
 WORKDIR /app
 COPY . .
-RUN ./mvnw clean package
+RUN mvn clean package
 
 FROM openjdk:22-jdk-slim
 WORKDIR /app
