@@ -72,15 +72,5 @@
 			</plugin>
 		</plugins>
 	</build>
-        
-        <profiles>
-    <profile>
-        <id>skip-tests</id>
-        <properties>
-            <skipTests>true</skipTests>
-        </properties>
-    </profile>
-</profiles>
-
 
 </project>
