@@ -1,14 +1,12 @@
-# Use the official OpenJDK image as the base image
-FROM openjdk:22-jdk-slim
+FROM maven:3.9.2-openjdk-22-slim AS builder
 
-# Set the working directory inside the container
 WORKDIR /app
+COPY . .
+RUN ./mvnw clean package
 
-# Copy the compiled JAR file from the target directory to the container
-COPY target/api-my-app.jar api-my-app.jar
+FROM openjdk:22-jdk-slim
+WORKDIR /app
+COPY --from=builder /app/target/api-my-app.jar api-my-app.jar
 
-# Expose the port your application runs on (update if necessary)
 EXPOSE 8080
-
-# Command to run the application
 CMD ["java", "-jar", "api-my-app.jar"]
