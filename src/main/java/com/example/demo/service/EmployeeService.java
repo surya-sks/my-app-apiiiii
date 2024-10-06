@@ -15,4 +15,5 @@ public interface EmployeeService {
    List<EmployeeAbsence> getAllEmployeesAbsence();
    EmployeeAbsenceHistory saveEmpAbsenceHistory(EmployeeAbsenceHistory employeeAbsenceHistory);
    List<EmployeeAbsenceHistory> getEmpAbsenceHistoryById(long id);
+   Boolean searchUser(String name, String password);
 }

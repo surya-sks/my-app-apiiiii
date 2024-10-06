@@ -22,6 +22,12 @@ public class Employee {
 	@Column(name="role")
     private String role;
 	
+	@Column(name="designation")
+    private String designation;
+	
+	@Column(name="password")
+    private String password;
+	
 	@Column(name="location")
     private String location;
 	
@@ -52,6 +58,22 @@ public class Employee {
 		this.role = role;
 	}
 
+	public String getDesignation() {
+		return designation;
+	}
+
+	public void setDesignation(String designation) {
+		this.designation = designation;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public String getLocation() {
 		return location;
 	}
@@ -66,7 +88,6 @@ public class Employee {
 
 	public void setContactNumber(Number contactNumber) {
 		this.contactNumber = contactNumber;
-	}
-    
-	}
+	}	
+  }
 

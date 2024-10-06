@@ -85,6 +85,8 @@ public class EmployeeServiceImpl implements EmployeeService{
 		Employee existingEmployee = employeeRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Employee", "Id", id));
 		existingEmployee.setName(employee.getName());
 		existingEmployee.setRole(employee.getRole());
+		existingEmployee.setDesignation(employee.getDesignation());
+		existingEmployee.setPassword(employee.getPassword());
 		existingEmployee.setLocation(employee.getLocation());
 		existingEmployee.setContactNumber(employee.getContactNumber());
 		//save existing to DB
@@ -98,4 +100,10 @@ public class EmployeeServiceImpl implements EmployeeService{
 		employeeRepository.deleteById(id);
 		
 	} 	
+	
+	@Override
+	public Boolean searchUser(String name, String password) {
+		Employee employee = employeeRepository.findByNameAndPassword(name, password);
+		return employee != null;
+    }
 }

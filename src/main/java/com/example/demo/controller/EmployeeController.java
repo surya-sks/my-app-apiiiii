@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Employee;
@@ -80,5 +81,10 @@ public class EmployeeController {
 	   employeeService.deleteEmployeeById(employeeId);
 	   return new ResponseEntity<String>("Employee deleted successfully", HttpStatus.OK);
    }
-
+   
+ //get employee REST API
+   @GetMapping("/searchUser")
+   public Boolean searchUser(@RequestParam String name, @RequestParam String password){
+	   return employeeService.searchUser(name, password);
+   }
 }
