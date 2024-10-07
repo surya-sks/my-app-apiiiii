@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.hibernate.annotations.Any;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.yaml.snakeyaml.util.ArrayUtils;
 
@@ -21,9 +22,11 @@ import com.example.demo.service.ItemService;
 
 @Service
 public class ItemServiceImpl implements ItemService{
-    
+	@Autowired
 	private ItemPurchasedRepository itemPurchasedRepository;
+	@Autowired
 	private ItemsFruitListRepository itemsFruitListRepository;
+	@Autowired
 	private ItemsVegetableListRepository itemsVegetableListRepository; 
 	
 	public ItemServiceImpl(ItemPurchasedRepository itemPurchasedRepository,
